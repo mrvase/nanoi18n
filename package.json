@@ -1,5 +1,5 @@
 {
-  "name": "nanoi18n",
+  "name": "@nanokit/i18n",
   "version": "0.0.1",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -10,12 +10,13 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsup --entry src/index.ts --entry src/react.tsx --format esm,cjs --dts --external react --minify",
+    "build": "tsup --entry src/index.ts --entry src/react.tsx --format esm,cjs --minify --dts --external react",
     "dev": "tsup --entry src/index.ts --entry src/react.tsx --format esm,cjs --watch --dts",
     "lint": "eslint \"src/**/*.ts*\"",
     "clean": "rm -rf node_modules && rm -rf dist",
     "test": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "publish-packages": "rm -rf dist && pnpm build lint test typecheck && npm publish --access public --no-git-checks"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",

@@ -1,11 +1,11 @@
 <p align="center">
-  <h1 align="center">nanoi18n</h1>
+  <h1 align="center"><code>@nanokit/i18n</code></h1>
   <h4 align="center">Typesafe and customizable i18n in ~1 kb.</h4>
 </p>
 
 ## Introduction
 
-`nanoi18n` lets you write translations with
+`@nanokit/i18n` lets you write translations with
 
 - **variables**: `"My name is {{name}}"`
 - **pluralization**: `"{{count}} (apple|apples)"`
@@ -33,13 +33,13 @@ t.introduceMyself({ name: "John" });
 
 ```bash
 # npm
-npm install nanoi18n
+npm install @nanokit/i18n
 
 # yarn
-yarn add nanoi18n
+yarn add @nanokit/i18n
 
 # pnpm
-pnpm add nanoi18n
+pnpm add @nanokit/i18n
 ```
 
 - Create a file for a particular language
@@ -62,7 +62,7 @@ export const translation = {
 ```ts
 // translation.ts
 
-import { createTranslator } from "nanoi18n";
+import { createTranslator } from "@nanokit/i18n";
 import { translation, modifiers } from "./languages/en";
 
 export const t = createTranslator(translation, modifiers);
@@ -152,7 +152,7 @@ You can add multiple modifiers for each variable, e.g. `{{gender:pronoun_possess
 
 ## React adapter
 
-Use `nanoi18n` with `React` and lazy loading:
+Use `@nanokit/i18n` with `React` and lazy loading:
 
 ```ts
 // translation-react.ts
@@ -201,7 +201,7 @@ function PresentName() {
 The library lets you create a utility, `m`:
 
 ```ts
-import { createModifierHelper } from "nanoi18n";
+import { createModifierHelper } from "@nanokit/i18n";
 
 const m = createModifierHelper(modifiers);
 ```
